@@ -111,7 +111,7 @@ def criar_conta(agencia, numero_conta, usuarios):
         print("\n=== Conta criada com sucesso! ===")
         return {"agencia": agencia, "numero_conta": numero_conta, "usuario": usuario}
 
-    print("\n@@@ Usuário não encontrado, fluxo de criação de conta encerrado! @@@")
+    print("\n*** Usuário não encontrado, fluxo de criação de conta encerrado! ***")
 
 
 def listar_contas(contas):
@@ -147,14 +147,7 @@ def inicio():
         elif opcao == "s":
             valor = float(input("Informe o valor do saque: "))
 
-            saldo, extrato = sacar(
-                saldo=saldo,
-                valor=valor,
-                extrato=extrato,
-                limite=limite,
-                numero_saques=numero_saques,
-                limite_saques=LIMITE_SAQUES,
-            )
+            saldo, extrato = sacar(saldo=saldo, valor=valor, extrato=extrato, limite=limite, numero_saques=numero_saques, limite_saques=LIMITE_SAQUES,)
 
         elif opcao == "e":
             exibir_extrato(saldo, extrato=extrato)
